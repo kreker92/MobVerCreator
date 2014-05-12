@@ -53,8 +53,12 @@ if ($this->direction == 'rtl') {
 	}
 }
 
+$doc->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js');
+$doc->addStyleSheet('//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.css');
+$doc->addScript('//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.js');
 $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_stylechanger.js', 'text/javascript');
 $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/hide.js', 'text/javascript');
+$doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/js.js', 'text/javascript');
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
