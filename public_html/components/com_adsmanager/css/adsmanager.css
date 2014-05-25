@@ -1,0 +1,825 @@
+/*                                */
+/* Stylesheet for com_adsmanager  */
+/*                                */
+/*    (c) 2006 Thomas PAPIN       */
+/*         GPL License            */
+/*                                */
+/*     support@juloa.com       */
+/*                                */
+
+#adsmanager_fieldset form br {
+	clear: left;
+}
+
+.adsmanager_main_cat,.adsmanager_main_cat a:link,.adsmanager_main_cat a:visited{
+ font-size: 16px;
+ margin: 0px;
+ margin-top: 10px;
+ padding: 0px ;
+ color: #000000;
+}
+
+.adsmanager_sub_cat,.adsmanager_sub_cat a:link,.adsmanager_sub_cat a:visited {
+ font-size: 11px;
+ font-family: arial;
+ margin-top: 2px;
+ padding: 0 ;
+ color: #7333B3;
+ font-weight:normal;
+ text-decoration:none;
+}
+
+.imgcat {
+ border : 0;
+}
+
+.adsmanager_footer {
+ font-size: 10px;
+ color: #555555;
+}
+
+.adsmanager_cat {
+ font-size: 10px;
+ color: #555555;
+}
+
+.adsmanager_pathway {
+ margin-bottom:10px;
+}
+
+table.adsmanager_table{
+ background-color: #F7F7F7;
+ border: 1px solid #cccccc;
+ border-collapse: collapse; 
+ width: 98%;
+}
+
+table.adsmanager_table th {
+ background-color: #EEEEEE;
+ border: 1px solid #cccccc;
+ text-align:center;
+ font-size: 11px;
+}
+
+table.adsmanager_table td {
+ border: 1px solid #cccccc;
+}
+
+.adsmanager_table td img.adimage {
+	float: left;
+	padding-right: 8px;
+}
+
+.adsmanager_table td h2{
+	font-size: 11px;
+	margin-bottom : 0px;
+	padding-bottom: 5px;
+}
+
+.adsmanager_table td {
+	text-align: left;
+	padding : 5px;
+}
+
+table.adsmanager_table tr td.right {
+ text-align: right;
+}
+
+
+table.adsmanager_topmenue {
+  background-color: #F7F7F7;
+  color: #000000;
+  padding: 0px;
+  margin: 0px;
+}
+
+table.adsmanager_topmenue td {
+  border: 1px solid #cccccc;
+  color: #000000;
+  padding: 3px;
+  margin: 0px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.adsmanager_search_title {
+ background: url(../images/system/title.png) no-repeat;
+ height: 24px;
+ color: #7333B3;
+ padding-top: 1px; 
+ padding-left: 24px; 
+ margin-bottom: 2px;
+ margin-top: 2px;
+ font-weight: bold;
+ font-size: 14px;
+ }
+ 
+.adsmanager_subtitle {
+ text-align : right;
+ margin-bottom: 2px; 
+}
+
+.adsmanager_search_box {
+	position :relative;
+	width: 96%;
+	left: 2%;
+	/*border: 1px solid #CCCCCC;*/
+	color: #000000;
+	padding: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.adsmanager_box_module {
+	width: 95%;
+	/*border: 1px solid #333333;*/
+	color: #000000;
+	padding: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.adsmanager_box {
+    position :relative;
+	width: 75%;
+	left: 10%;
+	border: 1px solid #CCCCCC;
+	color: #000000;
+	padding: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.adsmanager_inner_box {
+	font-size: 12px;
+	color: #000000;
+	/*background-color: #EEEEEE;*/
+	padding: 5px; 
+	text-align:right;
+}
+
+.adsmanager_inner_box tr td {
+	padding-right: 5px;
+}
+
+.adsmanager_search_box form {
+	display : inline;
+}
+
+.imgheading {
+    margin-right : 5px;
+}
+
+table.adsmanager {
+	width: 100%;
+	color: #000000;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+table.adsmanager_header {
+	color: #000000;
+	background-color: #FFFFFF;
+}
+table.adsmanager_select {
+	/* width: 100%; */
+	color: #000000;
+	background-color: #F0F0F0;
+}
+
+div.adsmanager_ads {
+  border: 1px solid #CCCCCC;
+  color: #000000;
+  padding: 10px;
+  margin: 0px;
+}
+
+div.ads_background {
+	background-color: white;
+}
+
+div.adsmanager_top_ads {
+}
+
+div.adsmanager_top_ads h2 {
+	border-bottom: 1px solid #DDDDDD;
+}
+
+#advancedsearch {
+	display:none;
+}
+
+div.addetails_topright {
+	text-align : right;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+div.adsmanager_ads_state {
+	text-align : right;
+}
+
+h2.adsmanager_ads_title {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0px; 
+	margin: 0px;
+}
+
+div.adsmanager_ads_main {
+}
+
+div.adsmanager_ads_body {
+	float: right;
+	width: 67%;
+	border-right:1px solid #DDDDDD;
+}
+
+div.adsmanager_ads_desc {
+	border: 1px solid #FFFFFF;
+	padding: 5px; 
+}
+
+div.adsmanager_ads_price {
+	border: 1px solid #FFFFFF;
+	padding: 5px; 
+}
+
+div.adsmanager_ads_contact {
+	border: 1px solid #FFFFFF;
+	padding: 5px; 
+}
+
+div.adsmanager_ads_image {
+	border-left: 1px solid #FFFFFF;
+	float: right;
+	width:30%;
+	padding: 5px; 
+	text-align : center;
+}
+
+div.adsmanager_ads_image a{
+	display : block;
+	margin-top: 10px;
+	background: none repeat scroll 0 0 #FFFFFF !important;		
+}
+
+div.adsmanager_ads_image a img{
+	box-shadow:0 2px 4px #808080;
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 0 5px;
+	padding:5px;
+	border: 1px solid #B0B0B0;
+}
+
+table.adsmanager_inner_box img {
+	box-shadow:0 2px 4px #808080;
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 0 5px;
+	padding:5px;
+	border: 1px solid #B0B0B0;
+}
+
+.adimage {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 0 5px;
+	padding:5px;
+	border: 1px solid #B0B0B0;
+	margin-right:10px;
+}
+
+.adsmanager_spacer {	
+	clear: both;
+}
+
+div.adsmanager_footer {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+
+
+
+fieldset.adsmanager {
+	color: #000000;
+	border: 1px solid #CCCCCC;
+	/* background_color: #555555; */
+	/* padding: 5; */
+}
+
+
+legend.adsmanager {
+	color: #000000;
+	font-weight: bold;
+	border: 1px solid #CCCCCC;
+	/* background_color: #DDDDDD; */
+	padding: 10px;
+}
+
+
+
+.adsmanager {
+	border: 1px solid #CCCCCC;
+	/*background-color: #F0F0F0;*/
+	margin: 2px;
+	padding: 2px;
+}
+
+.adsmanager_required {
+	border: 1px solid #CCCCCC !important;
+	background-color: #DDDDFF;
+	margin: 2px;
+	padding: 2px;
+} 
+
+#adsmanager_fieldset label {
+	/* border: 1px solid #CCCCCC; */
+	width: 15%;
+	float: left;
+	margin: 2px;
+	padding: 2px;
+	text-align: right;
+}
+
+#adsmanager_fieldset label.right {
+	/* border: 1px solid #CCCCCC; */
+	width: 14em;
+	float: left;
+	margin: 5px;
+	padding: 2px;
+	text-align: left;
+}
+
+#adsmanager_writead_header{
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#adsmanager_innermenu {
+text-align:center !important;
+margin-left:auto;
+margin-right:auto;
+}
+
+#adshome {
+	text-align:center !important;	
+}
+
+#adshome img {
+	padding-right: 10px;	
+	padding-top:10px;
+}
+
+.pagelinks {
+	text-align:center!important;	
+	padding:10px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.pagelinks li
+{
+        display:inline;
+        padding:2px 5px;
+        text-align:left;
+        border:solid 0px #eee;
+        margin:0 2px
+}
+
+#currentimages {
+	list-style-type: none !important;
+	margin: 0; padding: 0;
+}
+
+#currentimages li { 
+	margin: 3px 3px 3px 0; 
+	padding: 1px; 
+	float: left; 
+	text-align: center;
+	padding:2px !important;
+}
+
+table.adsmanager_table tr td.tdcenter {
+	margin-left:auto; margin-right:auto;	
+	text-align:center !important;	
+}
+
+#adshome div {
+	text-align:center !important;	
+}
+
+.adsmanager_fronttext {
+	text-align:center !important;
+}
+
+.list-footer, .list-footer div{
+	text-align:center !important;
+}
+
+.adsmanager_box_module {
+	text-align:center !important;	
+}
+
+.adsmanager_box_module div {
+	text-align:center !important;	
+}
+
+
+#writead_header1 {
+    display: inline;
+	border: 1px solid #CCCCCC;
+	background-color: #DDDDFF;
+	width: 7em;
+	margin: 5px;
+	padding: 2px;
+}
+#writead_header2 {
+    display: inline;
+	border: 1px solid #CCCCCC;
+	/*background-color: #EEEEEE;*/
+	width: 7em;
+	margin: 5px;
+	padding: 2px;
+}
+
+/* v1.1.1 */
+.adsmanager_ver_list {
+    list-style: none;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.adsmanager_ver_list li {
+	background-image: none;
+}
+
+.list_highlight {
+background-color:#AAAAFF;
+}
+
+
+/*.trcategory____ {*/
+/*background-color:#AA00AA;*/
+/*}*/
+
+/*.trcategory____ td h2 a {*/
+/* font-weight: bold;*/
+/* font-size: 14px;*/
+/* color: #FFFFFF;*/
+/* text-decoration:underline;*/
+/*}*/
+
+.paymentmethod {
+	list-style: none;
+	margin:10px;
+}
+
+.cats {
+	min-width:300px;
+}
+.selected_cats {
+	 min-width:300px;	
+}
+
+.errormsg {
+	background: none repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 0;
+    text-indent: 30px;
+    border-bottom: 3px solid #84A7DB;
+    border-top: 3px solid #84A7DB;
+    color: #0055BB;
+    list-style: none outside none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.autocomplete_category {
+	width:300px;
+}
+
+.ui-autocomplete {
+		max-height: 150px;
+		overflow-y: auto;
+		/* prevent horizontal scrollbar */
+		overflow-x: hidden;
+		/* add padding to account for vertical scrollbar */
+		padding-right: 20px;
+}
+
+.category_cascade {
+	min-width:200px;
+}
+
+.categoryselect_cascade {
+	min-width:200px;
+}
+
+.ui-combobox {
+	position: relative;
+	display: inline-block;
+}
+.ui-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right : -3px;
+	margin-left: -1px;
+	padding: 0;
+	/* adjust styles for IE 6/7 */
+	*height: 1.7em;
+	*top: 0.1em;
+}
+.ui-combobox-input {
+	margin: 0;
+	padding: 0.1em;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+	height: 100px;
+}
+
+.search_box_user {
+	background-color:#095197;	
+}
+
+#adformtable  tr {
+	border:none;	
+}
+
+#adformtable  td {
+	border:none;	
+}
+
+.adsmanager_inner_box td {
+	border:none;	
+}
+
+.adsmanager_inner_box tr {
+	border:none;	
+}
+
+.exceeded {
+	color: red;
+}
+
+.warning {
+	color: orange;
+}
+
+.doubleselect_notselected {
+	float: left;	
+}
+
+.doubleselect_container select{
+	min-width:250px;
+}
+
+.doubleselect_action {
+	float: left;	
+	padding-left:10px;
+	padding-right:10px;
+	width:150px;
+}
+
+.doubleselect_action input {
+	display:block;
+	margin: 0px auto;	
+}
+
+.doubleselect_action div {
+	margin-top:10px;
+}
+
+.doubleselect_selected {
+	float: left;	
+}
+.doubleselect_container select {
+    height: auto !important;
+}
+
+/**
+ * Module GMAP
+ **/
+.gmappopup img {
+    width: 109px;
+	height: 74px;
+	margin-top: 6px;
+	margin-left: 1px;
+}
+.gmappopup .ruban_annonce {
+    float:right;
+}
+ 
+ .gmappopup .localisation {
+	color: #49A828;
+	font-weight: bold;
+ }
+ 
+ .gmappopup .mainpopup .imagediv {
+	float: left;
+	width: 120px;
+	height: 100%;
+	min-height: 90px;
+	text-align: center;
+ }
+ 
+ .gmappopup .mainpopup .textdiv {
+	float: left;
+	width: 200px;
+ }
+ 
+ .gmappopup h3 {
+	margin: 5px 0;
+ }
+ 
+ .gmappopup h3 a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000;
+ }
+ 
+ .gmappopup h3 a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 14px;
+ }
+ 
+ .gmappopup p.description {
+	text-align: justify;
+	color: #757575;
+	font-style: italic;
+	font-size: 12px;
+    max-width: 300px;
+ }
+ 
+ .gmappopup .linkpopup {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 12px;
+    text-align: center;
+    vertical-align: middle;
+	background-color: #363636;
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.gmappopup .linkpopup:hover {
+	background-color: #222222;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.gmappopup .linkpopup:active {
+	background-image: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    outline: 0 none;
+}
+
+ div#gmapads .gmapwraptitle {
+	border-bottom: #E0E0E0 1px solid;
+	padding: 5px 0 5px 10px;
+ }
+ 
+ div#gmapads .titlehide {
+	border-bottom: none;
+ }
+ 
+ /**
+  * Advanced search box module
+  **/
+.adsmanager_search_box div {
+	margin-bottom: 5px;
+    /*height: 20px;*/
+    clear: both;
+}
+
+.adsmanager_search_box select {
+    width: 100%;
+}
+
+.adsmanager_search_box .adsmanager_inner_box select {
+    width: 220px;
+}
+
+.adsmanager_search_box div .fieldtitle {
+	float: left;
+    display: block;
+    width: 40%;
+}
+
+.adsmanager_search_box div .fieldvalue {
+	float: left;
+    display: block;
+    width: 60%;
+}
+
+.adsmanager_search_box div .fieldvalue input {
+    width: 87%;
+}
+
+.adsmanager_search_box div .fieldvalue select {
+    width: 100%;
+}
+
+.ads-row-fluid {
+	width:100%;
+}
+
+.ads-row-fluid .ads-span6 {
+	width:50%;
+	float:left;
+	margin-left:0 !important;
+}
+
+@media (max-width: 767px)  {
+	.ads-row-fluid .ads-span6 {
+		width:100%;	
+	}
+}
+
+.ads-row-fluid .ads-span4 {
+	width:33%;
+	float:left;
+	margin-left:0 !important;
+}
+
+@media (max-width: 767px)  {
+	.ads-row-fluid .ads-span4 {
+		width:100%;	
+	}
+}
+
+.ads-row-fluid .ads-span3 {
+	width:25%;
+	float:left;
+	margin-left:0 !important;
+}
+
+@media (max-width: 767px)  {
+	.ads-row-fluid .ads-span3 {
+		width:100%;	
+	}
+}
+
+.google-maps img {
+   max-width: none;
+}
+.gmap img {
+max-width: none;
+}
+
+.ads-row-fluid .ads-span2 {
+	width:20%;
+	float:left;
+	margin-left:0 !important;
+}
+
+@media (max-width: 767px)  {
+	.ads-row-fluid .ads-span2 {
+		width:100%;	
+	}
+}
+
+@media (max-width: 480px)  {
+	div.adsmanager_ads_body {
+		border: none !important;
+		width: 100%;
+	}
+	
+	div.adsmanager_ads_image {
+		width: 100%;
+	}
+}
+
+/**
+ * 09/08/2013 : Correction of the multiple select height
+ **/
+select.adsmanager[multiple] {
+    height: auto !important;
+}
+
+.jcarousel-skin-tango {
+	overflow:hidden;
+}
+.jcarousel-skin-tango > li {
+	list-style-type:none !important;
+}

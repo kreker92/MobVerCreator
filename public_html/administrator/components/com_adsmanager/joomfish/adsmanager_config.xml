@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+  <name>Adsmanager - Front</name>
+  <author>Martijn</author>
+  <version>1.0</version>
+  <description>FrontText/Version AdsManager</description>
+  <reference>
+  	<table name="adsmanager_config">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+		<field type="titletext" name="version" translate="0">Title</field>
+		<field type="htmltext" name="fronttext" translate="1">Title</field>
+		<field type="htmltext" name="rules_text" translate="1">Title</field>
+  		<field type="htmltext" name="recall_text" translate="1">Title</field>
+	</table>
+  </reference>
+</joomfish>

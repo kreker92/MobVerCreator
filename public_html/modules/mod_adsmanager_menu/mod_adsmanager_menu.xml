@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="site">
+	<name>mod_adsmanager_menu</name>
+	<author>Thomas Papin</author>
+	<creationDate>May 2014</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@juloa.com</authorEmail>
+	<authorUrl>www.joomprod.com</authorUrl>
+	<version>2.9.11</version>
+	<description>Displays the AdsManager Menu</description>
+	<files>
+		<filename module="mod_adsmanager_menu">mod_adsmanager_menu.php</filename>
+		<filename>mod_adsmanager_menu.xml</filename>
+		<filename>index.html</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>tmpl/default.php</filename>
+	</files>
+	<languages folder="language">
+        <language tag="en-GB">en-GB.mod_adsmanager_menu.ini</language>
+        <language tag="en-GB">en-GB.mod_adsmanager_menu.sys.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_menu.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_menu.sys.ini</language>
+    </languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="displaynumads" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_NBADS" description="MOD_ADSMANAGER_MENU_DISPLAY_NBADS_DESC">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displayhome" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_HOME" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displaywritead" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_WRITEAD" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displayprofile" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_PROFILE" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displaymyads" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_MYADS" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displayrules" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_RULES" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displayallads" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_ALLADS" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displaycategories" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_CATEGORIES" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+				<field name="displayseparators" type="radio" default="1"  label="MOD_ADSMANAGER_MENU_DISPLAY_SEPARATORS" description="">
+					<option value="0">MOD_ADSMANAGER_MENU_NO</option>
+					<option value="1">MOD_ADSMANAGER_MENU_YES</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">		
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" 
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option	value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
+

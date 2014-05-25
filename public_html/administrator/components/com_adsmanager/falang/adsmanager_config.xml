@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<falang type="contentelement">
+  <name>Adsmanager - Front</name>
+  <author>Martijn</author>
+  <version>1.0</version>
+  <description>FrontText/Version AdsManager</description>
+  <reference>
+  	<table name="adsmanager_config">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+		<field type="htmltext" name="fronttext" translate="1">FrontText</field>
+		<field type="htmltext" name="rules_text" translate="1">RulesText</field>
+  		<field type="htmltext" name="recall_text" translate="1">ReCallText</field>
+	</table>
+    	<component>
+  		<form>com_adsmanager</form>
+  	</component>
+  </reference>
+  <translationfilters>
+      <keyword>title</keyword>
+      <!--<extension>extension</extension>-->
+  	  <published>published</published>
+  </translationfilters>
+</falang>

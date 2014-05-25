@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+  <name>AdsManager - Field Values</name>
+  <author>Ed</author>
+  <version>1.1</version>
+  <description>Value Fields for Adserver</description>
+  <reference>
+  	<table name="adsmanager_field_values">
+  		<field type="referenceid" name="fieldvalueid" translate="0">ID</field>
+  		<field type="titletext" name="fieldtitle" translate="1">Title</field>
+  	</table>
+  </reference>
+</joomfish>

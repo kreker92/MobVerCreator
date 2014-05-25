@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+  <name>AdsManager - Categories</name>
+  <author>Nico</author>
+  <version>1.0</version>
+  <description>Categories for AdsManager</description>
+  <reference>
+  	<table name="adsmanager_categories">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+  		<field type="titletext" name="name" translate="1">Title</field>
+  		<field type="textarea" name="description" translate="1">Description</field>
+  	</table>
+  </reference>
+</joomfish>

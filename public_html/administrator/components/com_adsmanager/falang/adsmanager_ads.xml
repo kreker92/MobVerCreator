@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<falang type="contentelement">
+  <name>Adsmanager - Ads</name>
+  <author>Martijn van Vreeden</author>
+  <version>1.0</version>
+  <description>Ads for AdsManager</description>
+  <reference>
+  	<table name="adsmanager_ads">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+  		<field type="titletext" name="ad_headline" translate="1">Title</field>
+  		<field type="htmltext" name="ad_text" translate="1">Description</field>
+  		<field type="textarea" name="metadata_description" translate="1">Metadata Description</field>
+  		<field type="textarea" name="metadata_keywords" translate="1">MetaData Description</field>
+	</table>
+    	<component>
+  		<form>com_adsmanager</form>
+  	</component>
+  </reference>
+  <translationfilters>
+      <keyword>ad_headline</keyword>
+      <!--<extension>extension</extension>-->
+  	  <published>published</published>
+  </translationfilters>
+</falang>

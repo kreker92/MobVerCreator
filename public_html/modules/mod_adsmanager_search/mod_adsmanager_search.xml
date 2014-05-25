@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="site">
+	<name>mod_adsmanager_search</name>
+	<author>Thomas Papin</author>
+	<creationDate>May 2014</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@juloa.com</authorEmail>
+	<authorUrl>www.joomprod.com</authorUrl>
+	<version>2.9.11</version>
+	<description>AdsManager Search Module</description>
+	<files>
+		<filename module="mod_adsmanager_search">mod_adsmanager_search.php</filename>
+		<filename>mod_adsmanager_search.xml</filename>
+		<filename>index.html</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>tmpl/default.php</filename>
+	</files>
+	<languages folder="language">
+        <language tag="en-GB">en-GB.mod_adsmanager_search.ini</language>
+        <language tag="en-GB">en-GB.mod_adsmanager_search.sys.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_search.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_search.sys.ini</language>
+    </languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="advanced_search" type="radio" default="1" label="MOD_ADSMANAGER_SEARCH_ADVANCED_SEARCH" description="MOD_ADSMANAGER_SEARCH_ADVANCED_SEARCH_DESC">
+					<option value="0">MOD_ADSMANAGER_SEARCH_NO</option>
+					<option value="1">MOD_ADSMANAGER_SEARCH_YES</option>
+				</field>
+				<field name="search_by_cat" type="radio" default="1" label="MOD_ADSMANAGER_SEARCH_CAT" description="MOD_ADSMANAGER_SEARCH_CAT_DESC">
+					<option value="0">MOD_ADSMANAGER_SEARCH_NO</option>
+					<option value="1">MOD_ADSMANAGER_SEARCH_YES</option>
+				</field>
+                <field name="search_by_text" type="radio" default="1" label="MOD_ADSMANAGER_SEARCH_ADVANCED_TEXT" description="MOD_ADSMANAGER_SEARCH_ADVANCED_TEXT_DESC">
+					<option value="0">MOD_ADSMANAGER_SEARCH_NO</option>
+					<option value="1">MOD_ADSMANAGER_SEARCH_YES</option>
+				</field>
+				<field name="field1" type="text" default="" label="MOD_ADSMANAGER_SEARCH_FIELD1" description="MOD_ADSMANAGER_SEARCH_FIELD_DESC" />
+				<field name="field2" type="text" default="" label="MOD_ADSMANAGER_SEARCH_FIELD2" description="Display a search field for this adsmanager field" />
+				<field name="field3" type="text" default="" label="MOD_ADSMANAGER_SEARCH_FIELD3" description="Display a search field for this adsmanager field" />
+				<field name="field4" type="text" default="" label="MOD_ADSMANAGER_SEARCH_FIELD4" description="Display a search field for this adsmanager field" />
+				<field name="field5" type="text" default="" label="MOD_ADSMANAGER_SEARCH_FIELD5" description="Display a search field for this adsmanager field" />	
+				<field name="type" type="radio" default="table" label="MOD_ADSMANAGER_SEARCH_DISPLAY_TABLE" description="MOD_ADSMANAGER_SEARCH_DISPLAY_TABLE_DESC">
+					<option value="div">Div</option>
+					<option value="table">Table</option>
+					<option value="horizontal">Horizontal</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">		
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" 
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

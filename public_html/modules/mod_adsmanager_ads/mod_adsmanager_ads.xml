@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="site">
+	<name>mod_adsmanager_ads</name>
+	<author>Thomas Papin</author>
+	<creationDate>May 2014</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@juloa.com</authorEmail>
+	<authorUrl>www.joomprod.com</authorUrl>
+	<version>2.9.11</version>
+	<description>Displays the latest / random / popular ads of AdsManager</description>
+	<files>
+		<filename module="mod_adsmanager_ads">mod_adsmanager_ads.php</filename>
+		<filename>mod_adsmanager_ads.xml</filename>
+		<filename>index.html</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>tmpl/vertical.php</filename>
+        <filename>tmpl/horizontal.php</filename>
+	</files>
+	<languages folder="language">
+        <language tag="en-GB">en-GB.mod_adsmanager_ads.ini</language>
+        <language tag="en-GB">en-GB.mod_adsmanager_ads.sys.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_ads.ini</language>
+        <language tag="fr-FR">fr-FR.mod_adsmanager_ads.sys.ini</language>
+    </languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="random" type="list" default="0" label="MOD_ADSMANAGER_ADS_ORDER" description="MOD_ADSMANAGER_ADS_ORDER_DESC">
+					<option value="0">MOD_ADSMANAGER_ADS_LATEST</option>
+					<option value="1">MOD_ADSMANAGER_ADS_RANDOM</option>
+					<option value="2">MOD_ADSMANAGER_ADS_POPULAR</option>
+				</field>
+				<field name="nb_ads" type="text" default="3" size="2" label="MOD_ADSMANAGER_ADS_NBADS" description="" />
+				<field name="nb_ads_by_row" type="text" default="3" size="2" label="MOD_ADSMANAGER_ADS_ADS_BY_ROW" description="MOD_ADSMANAGER_HORIZONTAL_REQUIRED" />
+                <field name="align" type="radio" default="hor"	label="MOD_ADSMANAGER_ADS_ALIGN" description="">
+					<option value="ver">MOD_ADSMANAGER_ADS_VERTICAL</option>
+					<option value="hor">MOD_ADSMANAGER_ADS_HORIZONTAL</option>
+				</field>
+				<field name="image" type="radio" default="1" label="MOD_ADSMANAGER_ADS_IMAGE" description="">
+					<option value="0">MOD_ADSMANAGER_ADS_NO</option>
+					<option value="1">MOD_ADSMANAGER_ADS_YES</option>
+				</field>
+				<field name="imagesize" type="radio" default="small" label="Picture Size" description="Picture Size">
+                    <option value="small">MOD_ADSMANAGER_ADS_SMALL</option>
+                    <option value="medium">MOD_ADSMANAGER_ADS_MEDIUM</option>
+                    <option value="large">MOD_ADSMANAGER_ADS_LARGE</option>
+                </field>
+				<field name="displaycategory" type="radio" default="1" label="MOD_ADSMANAGER_ADS_CATEGORY" description="">
+					<option value="0">MOD_ADSMANAGER_ADS_NO</option>
+					<option value="1">MOD_ADSMANAGER_ADS_YES</option>
+				</field>
+				<field name="displaydate" type="radio" default="1" label="MOD_ADSMANAGER_ADS_DATE" description="">
+					<option value="0">MOD_ADSMANAGER_ADS_NO</option>
+					<option value="1">MOD_ADSMANAGER_ADS_YES</option>
+				</field>
+				<field name="catselect" type="text" default="" size="4" label="MOD_ADSMANAGER_ADS_CATSELECT" description="MOD_ADSMANAGER_ADS_CATSELECT_DESC" />
+				<field name="field1" type="text" default="" label="MOD_ADSMANAGER_ADS_FIELD1" description="MOD_ADSMANAGER_SEARCH_FIELD_DESC" />
+				<field name="field2" type="text" default="" label="MOD_ADSMANAGER_ADS_FIELD2" description="Display a ads field" />
+				<field name="field3" type="text" default="" label="MOD_ADSMANAGER_ADS_FIELD3" description="Display a ads field" />
+				<field name="field4" type="text" default="" label="MOD_ADSMANAGER_ADS_FIELD4" description="Display a ads field" />
+				<field name="field5" type="text" default="" label="MOD_ADSMANAGER_ADS_FIELD5" description="Display a ads field" />	
+			</fieldset>
+			<fieldset name="advanced">		
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" 
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option	value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>	
+</extension>

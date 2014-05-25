@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>Adsmanager</name>
+	<author>TomPAP (joomprod.com)</author>
+	<creationDate>May 2014</creationDate>
+	<copyright>
+		Copyright (C) 2010-2012 JoomPROD. All rights reserved.
+	</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@juloa.com</authorEmail>
+	<authorUrl>www.joomprod.com</authorUrl>
+	<version>2.9.11</version>
+	<description>Classifield Ads</description>
+	<!-- Public front end files -->
+	<files folder="../frontend">
+		<filename>adsmanager.php</filename>
+		<filename>cron.php</filename>
+		<filename>controller.php</filename>
+		<filename>router.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>font</folder>
+		<folder>helpers</folder>
+		<folder>highslide</folder>
+		<folder>images</folder>
+		<folder>lytebox</folder>
+		<folder>lib</folder>
+		<folder>views</folder>
+	</files>
+
+	<!-- Front end translation files -->
+
+	<languages folder="../translations/frontend">
+		<language tag="en-GB">en-GB.com_adsmanager.ini</language>
+		<language tag="fr-FR">fr-FR.com_adsmanager.ini</language>
+	</languages>
+	
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu link="option=com_adsmanager&amp;c=configuration" img="../components/com_adsmanager/images/adsmanager-16.png" >COM_ADSMANAGER</menu>
+		<submenu>
+			<menu link="option=com_adsmanager&amp;c=configuration" img="../components/com_adsmanager/images/menu/adsconfig.png">COM_ADSMANAGER_CONFIGURATION</menu>
+			<menu link="option=com_adsmanager&amp;c=fields" img="../components/com_adsmanager/images/menu/adsfield.png">COM_ADSMANAGER_FIELDS</menu>
+			<menu link="option=com_adsmanager&amp;c=columns" img="../components/com_adsmanager/images/menu/adscolumns.png">COM_ADSMANAGER_COLUMNS</menu>
+			<menu link="option=com_adsmanager&amp;c=positions" img="../components/com_adsmanager/images/menu/adspositions.png">COM_ADSMANAGER_AD_DISPLAY</menu>
+			<menu link="option=com_adsmanager&amp;c=categories" img="../components/com_adsmanager/images/menu/adscategory.png">COM_ADSMANAGER_CATEGORIES</menu>
+			<menu link="option=com_adsmanager&amp;c=contents" img="../components/com_adsmanager/images/menu/adscontent.png">COM_ADSMANAGER_CONTENTS</menu>
+			<menu link="option=com_adsmanager&amp;c=plugins" img="../components/com_adsmanager/images/menu/adsplugins.png" >COM_ADSMANAGER_PLUGINS</menu>
+			<menu link="option=com_adsmanager&amp;c=fieldimages" img="../components/com_adsmanager/images/menu/adsimages.png">COM_ADSMANAGER_FIELD_IMAGES</menu>
+			<menu link="option=com_adsmanager&amp;c=tools" img="../components/com_adsmanager/images/menu/adstools.png">COM_ADSMANAGER_TOOLS</menu>
+		</submenu>
+
+		<!-- Back-end files -->
+		<files folder="../backend">
+			<filename>index.html</filename>
+            <filename>adsmanager.xml</filename>
+			<filename>install.sql</filename>
+            <filename>config.xml</filename>
+			<filename>adsmanager.php</filename>
+			<filename>install.adsmanager.php</filename>
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>helpers</folder>
+			<folder>joomfish</folder>
+			<folder>falang</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+
+		<!-- Back-end translation files -->
+		<languages folder="../translations/backend">
+			<language tag="en-GB">en-GB.com_adsmanager.ini</language>
+			<language tag="en-GB">en-GB.com_adsmanager.menu.ini</language>
+			<language tag="en-GB">en-GB.com_adsmanager.sys.ini</language>
+			<language tag="fr-FR">fr-FR.com_adsmanager.ini</language>
+			<language tag="fr-FR">fr-FR.com_adsmanager.menu.ini</language>
+			<language tag="fr-FR">fr-FR.com_adsmanager.sys.ini</language>
+		</languages>
+
+	</administration>
+
+	<!-- Installation / uninstallation PHP scripts -->
+	<scriptfile>install.adsmanager.php</scriptfile>
+	
+	<!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<!-- Note: No spaces or linebreaks allowed between the server tags -->
+		<server type="extension" priority="1" name="JoomPROD Update Site">http://www.joomprod.com/update/adsmanager.xml</server>
+	</updateservers>
+</extension>

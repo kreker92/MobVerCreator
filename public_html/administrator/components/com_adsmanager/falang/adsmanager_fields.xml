@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<falang type="contentelement">
+  <name>AdsManager - Fields</name>
+  <author>Ed</author>
+  <version>1.1</version>
+  <description>Title Fields for AdsManager</description>
+  <reference>    
+   <table name="adsmanager_fields">
+        <field type="referenceid" name="fieldid" translate="0">ID</field>
+        <field type="titletext" name="title" translate="1">Title</field>
+     </table>
+    	<component>
+  		<form>com_adsmanager</form>
+  	</component>
+  </reference>
+  <translationfilters>
+      <keyword>title</keyword>
+      <!--<extension>extension</extension>-->
+  	  <published>published</published>
+  </translationfilters>
+</falang>

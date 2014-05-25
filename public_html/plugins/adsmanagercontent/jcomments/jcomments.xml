@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="adsmanagercontent" method="upgrade">
+	<name>Adsmanager - JComments</name>
+	<author>JoomPROD</author>
+	<creationDate>May 2014</creationDate>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>support@juloa.com</authorEmail>
+	<authorUrl>www.joomprod.com</authorUrl>
+	<version>2.9.11</version>
+	<description>JComments Adsmanager Integration</description>
+
+	<files>
+		<filename plugin="jcomments">jcomments.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<params/>
+	<config>
+	</config>
+</extension>

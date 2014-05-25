@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<joomfish type="contentelement">
+  <name>AdsManager - Columns</name>
+  <author>Martijn van Vreeden</author>
+  <version>1.0</version>
+  <description>Columns for Adserver</description>
+  <reference>
+  	<table name="adsmanager_columns">
+  		<field type="referenceid" name="id" translate="0">ID</field>
+  		<field type="titletext" name="name" translate="1">Title</field>
+  	</table>
+  </reference>
+</joomfish>

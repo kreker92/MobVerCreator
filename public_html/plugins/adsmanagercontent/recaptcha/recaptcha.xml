@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="adsmanagercontent" method="upgrade">
+	<name>AdsManagerContent - ReCaptcha</name>
+	<version>2.5.0</version>
+	<creationDate>December 2011</creationDate>
+	<author>JoomPROD</author>
+    <creationDate>May 2014</creationDate>
+	<copyright>Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>ReCaptcha for Adsmanager (Adaptation of Joomla Plugin)</description>
+	<files>
+		<filename
+			plugin="recaptcha">recaptcha.php</filename>
+	</files>
+    <languages folder="language">
+      	<language tag="en-GB">en-GB.plg_adsmanagercontent_recaptcha.ini</language>
+       	<language tag="fr-FR">fr-FR.plg_adsmanagercontent_recaptcha.ini</language>
+       	<language tag="en-GB">en-GB.plg_adsmanagercontent_recaptcha.sys.ini</language>
+       	<language tag="fr-FR">fr-FR.plg_adsmanagercontent_recaptcha.sys.ini</language>
+   	</languages>
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+		<field
+			name="public_key"
+			type="text"
+			default=""
+			label="PLG_RECAPTCHA_PUBLIC_KEY_LABEL"
+			description="PLG_RECAPTCHA_PUBLIC_KEY_DESC"
+			required="true"
+			filter="string"
+			size="50" />
+
+		<field
+			name="private_key"
+			type="text"
+			default=""
+			label="PLG_RECAPTCHA_PRIVATE_KEY_LABEL"
+			description="PLG_RECAPTCHA_PRIVATE_KEY_DESC"
+			required="true"
+			filter="string"
+			size="50" />
+
+		<field
+			name="theme"
+			type="list"
+			default="clean"
+			label="PLG_RECAPTCHA_THEME_LABEL"
+			description="PLG_RECAPTCHA_THEME_DESC"
+			required="true"
+			filter="">
+			<option
+				value="clean">PLG_RECAPTCHA_THEME_CLEAN</option>
+			<option
+				value="white">PLG_RECAPTCHA_THEME_WHITE</option>
+			<option
+				value="blackglass">PLG_RECAPTCHA_THEME_BLACKGLASS</option>
+			<option
+				value="red">PLG_RECAPTCHA_THEME_RED</option>
+			</field>
+		</fieldset>
+	</fields>
+	</config>
+</extension>
