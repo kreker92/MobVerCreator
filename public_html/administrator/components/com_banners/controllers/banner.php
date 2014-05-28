@@ -7,10 +7,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.controllerform');
 
 /**
  * Banner controller class.
@@ -38,15 +35,15 @@ class BannersControllerBanner extends JControllerForm
 	 */
 	protected function allowAdd($data = array())
 	{
-		// Initialise variables.
-		$user		= JFactory::getUser();
-		$categoryId	= JArrayHelper::getValue($data, 'catid', JRequest::getInt('filter_category_id'), 'int');
-		$allow		= null;
+		$user       = JFactory::getUser();
+		$filter     = $this->input->getInt('filter_category_id');
+		$categoryId = JArrayHelper::getValue($data, 'catid', $filter, 'int');
+		$allow      = null;
 
 		if ($categoryId)
 		{
 			// If the category has been passed in the URL check it.
-			$allow	= $user->authorise('core.create', $this->option . '.category.' . $categoryId);
+			$allow = $user->authorise('core.create', $this->option . '.category.' . $categoryId);
 		}
 
 		if ($allow === null)
@@ -72,7 +69,6 @@ class BannersControllerBanner extends JControllerForm
 	 */
 	protected function allowEdit($data = array(), $key = 'id')
 	{
-		// Initialise variables.
 		$user		= JFactory::getUser();
 		$recordId	= (int) isset($data[$key]) ? $data[$key] : 0;
 		$categoryId = 0;
@@ -99,7 +95,7 @@ class BannersControllerBanner extends JControllerForm
 	 *
 	 * @param   string  $model  The model
 	 *
-	 * @return	boolean  True on success.
+	 * @return  boolean  True on success.
 	 *
 	 * @since	2.5
 	 */
@@ -115,5 +111,4 @@ class BannersControllerBanner extends JControllerForm
 
 		return parent::batch($model);
 	}
-
 }

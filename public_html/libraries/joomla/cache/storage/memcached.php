@@ -20,20 +20,26 @@ defined('JPATH_PLATFORM') or die;
 class JCacheStorageMemcached extends JCacheStorage
 {
 	/**
+	 * Memcached connection object
+	 *
 	 * @var    Memcached
 	 * @since  12.1
 	 */
 	protected static $_db = null;
 
 	/**
+	 * Persistent session flag
+	 *
 	 * @var    boolean
 	 * @since  12.1
 	 */
 	protected $_persistent = false;
 
 	/**
-	 * @var
-	 * @since   12.1
+	 * Payload compression level
+	 *
+	 * @var    integer
+	 * @since  12.1
 	 */
 	protected $_compress = 0;
 
@@ -59,6 +65,7 @@ class JCacheStorageMemcached extends JCacheStorage
 	 * @return  object   memcached connection object
 	 *
 	 * @since   12.1
+	 * @throws  RuntimeException
 	 */
 	protected function getConnection()
 	{
@@ -94,7 +101,7 @@ class JCacheStorageMemcached extends JCacheStorage
 
 		if ($memcachedtest == false)
 		{
-			return JError::raiseError(404, "Could not connect to memcached server");
+			throw new RuntimeException('Could not connect to memcached server', 404);
 		}
 
 		self::$_db->setOption(Memcached::OPT_COMPRESSION, $this->_compress);
@@ -302,8 +309,10 @@ class JCacheStorageMemcached extends JCacheStorage
 	 * Test to see if the cache storage is available.
 	 *
 	 * @return  boolean  True on success, false otherwise.
+	 *
+	 * @since   12.1
 	 */
-	public static function test()
+	public static function isSupported()
 	{
 		if ((extension_loaded('memcached') && class_exists('Memcached')) != true)
 		{

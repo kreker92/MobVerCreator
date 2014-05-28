@@ -9,8 +9,6 @@
 
 defined('_JEXEC') or die;
 
-jimport('joomla.environment.uri');
-
 /**
  * OpenSearch View class for Finder
  *
@@ -39,7 +37,7 @@ class FinderViewSearch extends JViewLegacy
 		$doc->setDescription($params->get('opensearch_description', $app->getCfg('MetaDesc')));
 
 		// Add the URL for the search
-		$searchUri = JURI::base() . 'index.php?option=com_finder&q={searchTerms}';
+		$searchUri = JUri::base() . 'index.php?option=com_finder&q={searchTerms}';
 
 		// Find the menu item for the search
 		$menu = $app->getMenu();

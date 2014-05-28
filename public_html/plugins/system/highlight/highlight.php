@@ -9,8 +9,6 @@
 
 defined('JPATH_BASE') or die;
 
-jimport('joomla.application.component.helper');
-
 /**
  * System plugin to highlight terms.
  *
@@ -39,7 +37,7 @@ class PlgSystemHighlight extends JPlugin
 			return true;
 		}
 
-		// Set the variables
+		// Set the variables.
 		$input = JFactory::getApplication()->input;
 		$extension = $input->get('option', '', 'cmd');
 
@@ -64,11 +62,12 @@ class PlgSystemHighlight extends JPlugin
 		{
 			return true;
 		}
-		
-		// Clean the terms array
+
+		// Clean the terms array.
 		$filter = JFilterInput::getInstance();
 
 		$cleanTerms = array();
+
 		foreach ($terms as $term)
 		{
 			$cleanTerms[] = htmlspecialchars($filter->clean($term, 'string'));

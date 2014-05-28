@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $HeadURL: https://joomgallery.org/svn/joomgallery/JG-2.0/LF/trunk/ru-ru.com_joomgallery/install.xml $  -->
+<!-- $Id: install.xml 4302 2013-06-08 19:26:56Z mab $  -->
+<extension version="1.7" type="file" client="both" method="upgrade">
+    <tag>ru-RU</tag>
+    <name>JoomGallery ru-RU</name>
+    <version>2.1.4</version>
+    <creationDate>2013-06-08</creationDate>
+    <author>JoomGallery::ProjectTeam</author>
+    <authorEmail>team@joomgallery.net</authorEmail>
+    <authorUrl>http://www.joomgallery.net/</authorUrl>
+    <copyright>Copyright (C) 2008 - 2013 JoomGallery::ProjectTeam. All rights reserved.</copyright>
+    <license>GNU General Public License</license>
+    <description><![CDATA[
+    <div align="center">
+      <table border="0" width="90%">
+        <tr>
+          <td width="100%" colspan="2">
+            <div align="center">
+              <h3>Russian Translation for JoomGallery 2.1</h3>
+              <br /><strong>by: <a href="https://www.transifex.com/projects/p/joomgallery/language/ru_RU/" target="_blank">JoomGallery::TranslationTeam::Russian</a></strong>
+              <br />(based on a translation by: Hermann Maurer, mikenike (EXIF) and Michael Grigorev (IPTC))
+            </div>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td width="25%"><u><strong>Translated areas:</strong></u></td>
+          <td width="75%">Administrator (Backend) and Website (Frontend) incl. EXIF- and IPTC-Tags</td>
+        </tr>
+        <tr>
+          <td width="25%"><u><strong>Translation version:</strong></u></td>
+          <td width="75%">2.1.4</td>
+        </tr>
+        <td width="100%" colspan="2"><hr /></td>
+        <tr>
+          <td width="25%"><u><strong>JoomGallery-Website:</strong></u></td>
+          <td width="75%"><a href="http://www.en.joomgallery.net" target="_blank">http://www.en.joomgallery.net</a></td>
+        </tr>
+        </tr>
+        <td width="100%" colspan="2"><hr /></td>
+        <tr>
+      </table>
+    </div>]]></description>
+    <fileset>
+      <files folder="site" target="language/ru-RU">
+        <filename>ru-RU.com_joomgallery.exif.ini</filename>
+        <filename>ru-RU.com_joomgallery.ini</filename>
+        <filename>ru-RU.com_joomgallery.iptc.ini</filename>
+      </files>
+      <files folder="admin" target="administrator/language/ru-RU">
+        <filename>ru-RU.com_joomgallery.ini</filename>
+        <filename>ru-RU.com_joomgallery.sys.ini</filename>
+      </files>
+    </fileset>
+</extension>

@@ -3,7 +3,7 @@
  * @package     Joomla.Platform
  * @subpackage  Crypt
  *
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -56,10 +56,18 @@ class JCrypt
 	 * @return  string  The decrypted data string.
 	 *
 	 * @since   12.1
+	 * @throws  InvalidArgumentException
 	 */
 	public function decrypt($data)
 	{
-		return $this->_cipher->decrypt($data, $this->_key);
+		try
+		{
+			return $this->_cipher->decrypt($data, $this->_key);
+		}
+		catch (InvalidArgumentException $e)
+		{
+			return false;
+		}
 	}
 
 	/**
@@ -117,15 +125,14 @@ class JCrypt
 	 */
 	public static function genRandomBytes($length = 16)
 	{
+		$length = (int) $length;
 		$sslStr = '';
-		/*
-		 * if a secure randomness generator exists and we don't
-		 * have a buggy PHP version use it.
-		 */
-		if (function_exists('openssl_random_pseudo_bytes')
-			&& (version_compare(PHP_VERSION, '5.3.4') >= 0 || IS_WIN))
+
+		// If a secure randomness generator exists use it.
+		if (function_exists('openssl_random_pseudo_bytes'))
 		{
 			$sslStr = openssl_random_pseudo_bytes($length, $strong);
+
 			if ($strong)
 			{
 				return $sslStr;
@@ -150,6 +157,7 @@ class JCrypt
 		if (function_exists('stream_set_read_buffer') && @is_readable('/dev/urandom'))
 		{
 			$handle = @fopen('/dev/urandom', 'rb');
+
 			if ($handle)
 			{
 				$urandom = true;
@@ -160,6 +168,7 @@ class JCrypt
 		{
 			$bytes = ($total > $shaHashLength)? $shaHashLength : $total;
 			$total -= $bytes;
+
 			/*
 			 * Collect any entropy available from the PHP system and filesystem.
 			 * If we have ssl data that isn't strong, we use it once.
@@ -168,6 +177,7 @@ class JCrypt
 			$entropy .= implode('', @fstat(fopen(__FILE__, 'r')));
 			$entropy .= memory_get_usage();
 			$sslStr = '';
+
 			if ($urandom)
 			{
 				stream_set_read_buffer($handle, 0);
@@ -184,22 +194,28 @@ class JCrypt
 				 */
 				$samples = 3;
 				$duration = 0;
+
 				for ($pass = 0; $pass < $samples; ++$pass)
 				{
 					$microStart = microtime(true) * 1000000;
 					$hash = sha1(mt_rand(), true);
+
 					for ($count = 0; $count < 50; ++$count)
 					{
 						$hash = sha1($hash, true);
 					}
+
 					$microEnd = microtime(true) * 1000000;
 					$entropy .= $microStart . $microEnd;
-					if ($microStart > $microEnd)
+
+					if ($microStart >= $microEnd)
 					{
 						$microEnd += 1000000;
 					}
+
 					$duration += $microEnd - $microStart;
 				}
+
 				$duration = $duration / $samples;
 
 				/*
@@ -213,14 +229,17 @@ class JCrypt
 				 * at least $bitsPerRound bits of entropy from each measurement.
 				 */
 				$iter = $bytes * (int) ceil(8 / $bitsPerRound);
+
 				for ($pass = 0; $pass < $iter; ++$pass)
 				{
 					$microStart = microtime(true);
 					$hash = sha1(mt_rand(), true);
+
 					for ($count = 0; $count < $rounds; ++$count)
 					{
 						$hash = sha1($hash, true);
 					}
+
 					$entropy .= $microStart . microtime(true);
 				}
 			}
@@ -268,5 +287,30 @@ class JCrypt
 
 		// They are only identical strings if $result is exactly 0...
 		return $result === 0;
+	}
+
+	/**
+	 * Tests for the availability of updated crypt().
+	 * Based on a method by Anthony Ferrera
+	 *
+	 * @return  boolean  Always returns true since 3.3
+	 *
+	 * @note    To be removed when PHP 5.3.7 or higher is the minimum supported version.
+	 * @see     https://github.com/ircmaxell/password_compat/blob/master/version-test.php
+	 * @since   3.2
+	 * @deprecated  4.0
+	 */
+	public static function hasStrongPasswordSupport()
+	{
+		// Log usage of deprecated function
+		JLog::add(__METHOD__ . '() is deprecated without replacement.', JLog::WARNING, 'deprecated');
+
+		if (!defined('PASSWORD_DEFAULT'))
+		{
+			// Always make sure that the password hashing API has been defined.
+			include_once JPATH_ROOT . '/libraries/compat/password/lib/password.php';
+		}
+
+		return true;
 	}
 }

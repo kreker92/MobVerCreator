@@ -1,7 +1,9 @@
 <?php
 /**
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc & Russian Translation Team (http://joomlaportal.ru)
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package    Joomla.Language
+ *
+ * @copyright  Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
@@ -9,8 +11,8 @@ defined('_JEXEC') or die;
 /**
  * ru-RU localise class
  *
- * @package		Joomla.Site
- * @since		1.6
+ * @package  Joomla.Language
+ * @since    1.6
  */
 abstract class ru_RULocalise
 {
@@ -381,7 +383,7 @@ abstract class ru_RULocalise
 		$search_ignore[] = 'ответила';
 		$search_ignore[] = 'ответили';
 		$search_ignore[] = 'ответило';
-		$search_ignore[] = 'окуда';
+		$search_ignore[] = 'откуда';
 		$search_ignore[] = 'отнюдь';
 		$search_ignore[] = 'перед';
 		$search_ignore[] = 'писал';
@@ -447,7 +449,7 @@ abstract class ru_RULocalise
 		$search_ignore[] = 'самой';
 		$search_ignore[] = 'самом';
 		$search_ignore[] = 'самому';
-		$search_ignore[] = 'самоя';
+		$search_ignore[] = 'самая';
 		$search_ignore[] = 'саму';
 		$search_ignore[] = 'самую';
 		$search_ignore[] = 'самые';

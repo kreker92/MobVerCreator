@@ -1,0 +1,42 @@
+/* colors */
+#header { height: 150px; background: #FFE680; }
+#containerTop { background:#FFE680; }
+#containerBottom { background:#eee; }
+#contentTop { background:#eee; }
+#contentBottom { background:#FFE680; }
+#contentLeft { background: #FFACAA; }
+#contentRight { background: #B5E3FF; }
+#sideLeft  { background: #B5E3FF; }
+#sideRight { background: #FFACAA; }
+#footer { background: #BFF08E; }
+
+/* --- */
+
+html { height:100%; }
+body { font: 12px/15px Arial; height:100%; }
+
+#wrapper { min-height: 100%; height: auto !important; height: 100%; }
+div.wrapper { margin: 0 auto; }
+
+
+#nav { background: #BFF08E; }
+	#topmenu > ul > li { display: inline-block; *display: inline; *zoom: 1; vertical-align:middle; }
+
+
+#middle { width: 100%; padding: 0 0 100px; height: 1%; position: relative; }
+#container { width: 100%; float: left; }
+#content { }
+	#contentLeft { float: left; margin-left: -100%; position: relative; }
+	#contentRight { float: left; margin-right: -3px; position: relative; }
+	#containerCenter { width: 100%; float: left; }
+		#contentCenter { }
+		#contentCenter p { margin:10px 0; }
+
+
+#sideLeft { float: left; margin-left: -100%; position: relative; }
+
+
+#sideRight { float: left; margin-right: -3px; width: 200px; margin-left: -200px; position: relative; }
+
+
+#footer { margin: -100px auto 0; height: 100px; position: relative; }

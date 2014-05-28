@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die;
 
+JLoader::register('FinderIndexerStemmer', dirname(__DIR__) . '/stemmer.php');
+
 /**
  * Snowball stemmer class for the Finder indexer package.
  *
@@ -34,7 +36,8 @@ class FinderIndexerStemmerSnowball extends FinderIndexerStemmer
 		static $defaultLang = '';
 
 		// If language is All then try to get site default language.
-		if ($lang == '*' && $defaultLang == '') {
+		if ($lang == '*' && $defaultLang == '')
+		{
 			$languages = JLanguageHelper::getLanguages();
 			$defaultLang = isset($languages[0]->sef) ? $languages[0]->sef : '*';
 			$lang = $defaultLang;

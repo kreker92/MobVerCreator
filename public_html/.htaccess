@@ -1,6 +1,6 @@
 ##
 # @package		Joomla
-# @copyright	Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.
+# @copyright	Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.
 # @license		GNU General Public License version 2 or later; see LICENSE.txt
 ##
 
@@ -21,6 +21,7 @@ Options +FollowSymLinks
 ## Mod_rewrite in use.
 
 RewriteEngine On
+php_flag register_globals off
 
 ## Begin - Rewrite rules to block out some common exploits.
 # If you experience problems on your site block out the operations listed below

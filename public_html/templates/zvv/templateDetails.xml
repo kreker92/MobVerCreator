@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>zvv</name>
+	<creationDate>2 February 2014</creationDate>
+	<author>Zaytsev Victor</author>
+	<authorEmail>zvv1992@gmail.com</authorEmail>
+	<authorUrl>http://zaycev-web.ru</authorUrl>
+	<copyright>Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>3.1.0</version>
+	<description>Dinamic template zaycev-web.ru</description>
+
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>raw.php</filename>
+	</files>
+
+	<positions>
+		<position>debug</position>
+		<position>position-10</position>
+		<position>position-11</position>
+		<position>position-12</position>
+		<position>position-13</position>
+		<position>position-14</position>
+		<position>position-15</position>
+		<position>position-16</position>
+		<position>position-17</position>
+		<position>position-18</position>
+		<position>position-19</position>
+		<position>position-20</position>
+		<position>position-21</position>
+		<position>position-22</position>
+		<position>position-23</position>
+		<position>position-24</position>
+		<position>position-25</position>
+		<position>position-26</position>
+		<position>position-27</position>
+		<position>position-28</position>
+		<position>position-29</position>
+		<position>position-30</position>
+		<position>position-31</position>
+		<position>position-32</position>
+		<position>position-33</position>
+		<position>position-34</position>
+		<position>position-35</position>
+		<position>position-36</position>
+		<position>position-37</position>
+		<position>position-38</position>
+		<position>position-39</position>
+		<position>position-40</position>
+		<position>position-41</position>
+		<position>position-42</position>
+		<position>position-43</position>
+		<position>position-44</position>
+		<position>position-45</position>
+		<position>position-46</position>
+		<position>position-47</position>
+		<position>position-48</position>
+		<position>position-49</position>
+		<position>position-50</position>
+		<position>position-51</position>
+		<position>position-52</position>
+		<position>position-53</position>
+		<position>position-54</position>
+		<position>position-55</position>
+		<position>position-56</position>
+		<position>position-57</position>
+		<position>position-58</position>
+		<position>position-59</position>
+	</positions>
+
+	<!-- 	For core templates, we also install/uninstall the language files in the core language folders.
+	-->
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_zvv.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_zvv.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_zvv.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.tpl_zvv.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="minwidth" type="text" default="1000" label="min-width" />
+				<field name="maxwidth" type="text" default="1250" label="max-width" />
+				<field name="leftwidth" type="text" default="200" label="left-width" />
+				<field name="rightwidth" type="text" default="200" label="right-width" />
+				<field name="contentleftwidth" type="text" default="150" label="content-left-width" />
+				<field name="contentrightwidth" type="text" default="150" label="content-right-width" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

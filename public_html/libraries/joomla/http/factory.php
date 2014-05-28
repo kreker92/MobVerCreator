@@ -19,7 +19,7 @@ defined('JPATH_PLATFORM') or die;
 class JHttpFactory
 {
 	/**
-	 * method to recieve Http instance.
+	 * method to receive Http instance.
 	 *
 	 * @param   JRegistry  $options   Client options object.
 	 * @param   mixed      $adapters  Adapter (string) or queue of adapters (array) to use for communication.
@@ -35,6 +35,16 @@ class JHttpFactory
 		if (empty($options))
 		{
 			$options = new JRegistry;
+		}
+
+		if (empty($adapters))
+		{
+			$config = JFactory::getConfig();
+
+			if ($config->get('proxy_enable'))
+			{
+				$adapters = 'curl';
+			}
 		}
 
 		if (!$driver = self::getAvailableDriver($options, $adapters))
@@ -66,7 +76,8 @@ class JHttpFactory
 			settype($default, 'array');
 			$availableAdapters = $default;
 		}
-		// Check if there is available http transport adapters
+
+		// Check if there is at least one available http transport adapter
 		if (!count($availableAdapters))
 		{
 			return false;
@@ -76,7 +87,7 @@ class JHttpFactory
 		{
 			$class = 'JHttpTransport' . ucfirst($adapter);
 
-			if (call_user_func(array($class, 'isSupported')))
+			if ($class::isSupported())
 			{
 				return new $class($options);
 			}
@@ -95,15 +106,15 @@ class JHttpFactory
 	public static function getHttpTransports()
 	{
 		$names = array();
-		$iterator = new DirectoryIterator(dirname(__FILE__) . '/transport');
+		$iterator = new DirectoryIterator(__DIR__ . '/transport');
 
+		/* @type  $file  DirectoryIterator */
 		foreach ($iterator as $file)
 		{
 			$fileName = $file->getFilename();
 
 			// Only load for php files.
-			// Note: DirectoryIterator::getExtension only available PHP >= 5.3.6
-			if ($file->isFile() && substr($fileName, strrpos($fileName, '.') + 1) == 'php')
+			if ($file->isFile() && $file->getExtension() == 'php')
 			{
 				$names[] = substr($fileName, 0, strrpos($fileName, '.'));
 			}
