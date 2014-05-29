@@ -1,13 +1,15 @@
 var casper = require('casper').create({
 	clientScripts: ["jquery.min.js"]
 }), system = require('system');
-// console.log(system.args); // 4 по умолчанию
+// console.log(system.args); // 4 РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 
 var site = {
 	url: system.args[4],
 	webPages: new Array, //pages from sitemap
 	menus: new Array, //founded site menus
-	socBtns: new Array
+	socBtns: new Array,
+	sitemap: new Array,
+	multilang: system.args[5]
 }
 
 function getLinks() {
@@ -21,8 +23,7 @@ function getLocalLinks(links) {
 	var wP = new Array;
 	for(linkHref in links) {
 		href = links[linkHref];
-		if(!href.match(/^\//) && !href.match(site.url) || href == '/') {
-			
+		if(!href.match(/^\//) && !href.match(site.url) || href == '/' || href.match(/(gif|GIF|png|PNG|jpg|JPG|jpeg|JPEG|pdf|PDF|doc|DOC|docx|DOCX|xls|XLS|xlsx|XLSX)$/)) {
 		} else {
 			wP.push(href);
 		}
@@ -118,16 +119,106 @@ function getSocBtns(links) {
 
 function getMenus() {
 	var result = new Array();
-	$('.menu').each(function(i, e) {
-		result[i] = new Array();
-		$(e).find('a').each(function(j, q) {
-			result[i].push({
-				url: $(q).attr('href'),
-				text: $(q).text()
+	var menus = $('.menu');
+	// if(menus.length > 1) {
+		menus.each(function(i, e) {
+			result[i] = new Array();
+			$(e).find('a').each(function(j, q) {
+				result[i].push({
+					url: $(q).attr('href'),
+					text: $(q).text()
+				});
 			});
 		});
-	});
+	// }
 	return result;
+}
+
+function array_diff() {
+	var arr1 = arguments[0], retArr = {};
+	var k1 = '', i = 1, k = '', arr = {};
+ 
+	arr1keys:
+	for (k1 in arr1) {
+		for (i = 1; i < arguments.length; i++) {
+			arr = arguments[i];
+			for (k in arr) {
+				if (arr[k].url === arr1[k1].url) {
+					continue arr1keys; 
+				}
+			}
+			retArr[k1] = arr1[k1];
+		}
+	}        
+	return retArr;
+}
+
+function emptyObject(obj) {
+	for (var i in obj) {
+		return false;
+	}
+	return true;
+}
+
+function processMenu(arr) {
+	// if(arr == null) console.log(arr);
+	// if(arr != null) {
+		for(i in arr) {
+			arr[i].sort();
+		}
+	
+		arr.sort(function(a, b) {
+			return a.length - b.length;
+		});
+	
+		for(i in arr) {
+			for(j in arr) {
+				if(j == i) continue;
+				if(emptyObject(array_diff(arr[i], arr[j]))) arr.splice(i, 1);
+			}
+		}
+		return arr.reverse();
+	// }
+	// return arr;
+}
+
+function filterLinks(links) {
+	for(i in links) {
+		for(j in site.menus) {
+			for(g in site.menus[j]) {
+				if(links[i] == site.menus[j][g].url) {
+					links.splice(i, 1);
+				}
+			}
+		}
+	}
+	links.sort();
+	for (i = links.length - 1; i > 0; i--) {
+		if (links[i] == links[i - 1]) links.splice( i, 1);
+	}
+	return links;
+}
+
+function addLinksToSitemap(sitemap, links) {
+	sitemap.concat(links);
+	for (i = sitemap.length - 1; i > 0; i--) {
+		if (sitemap[i] == sitemap[i - 1]) sitemap.splice( i, 1);
+	}
+	return sitemap;
+}
+
+function processContentHead(content) {
+	
+}
+
+function processContentBody(content) {
+	
+}
+
+function processContent(content) {
+	processContentHead(content);
+	processContentBody(content);
+	return content;
 }
 
 casper.start(site.url, function() {
@@ -135,9 +226,12 @@ casper.start(site.url, function() {
 	site.webPages.push({
 		url: site.url,
 		links: getLocalLinks(links),
-		content: this.getPageContent()
+		content: processContent(this.getPageContent())
 	});
-	site.menus = this.evaluate(getMenus);
+	site.menus = processMenu(this.evaluate(getMenus));
+	for(i in site.webPages) {
+	site.sitemap.push(site.webPages[i].links);
+	}
 	site.socBtns = getSocBtns(getAbsoluteLinks(links));
 });
 
@@ -147,13 +241,12 @@ casper.then(function() {
 	this.each(pages, function(response) {
 		i++;
 		casper.thenOpen(site.url +''+ pages[i], function() {
-			links = this.evaluate(getLinks);
-			links = getLocalLinks(links);
 			site.webPages.push({
 				url: this.getCurrentUrl(), 
-				links: links,
-				content: this.getPageContent()
+				links: filterLinks(getLocalLinks(this.evaluate(getLinks))),
+				content: processContent(this.getPageContent())
 			});
+			site.sitemap = addLinksToSitemap(site.sitemap, site.webPages);
 		});
 	});
 });
@@ -163,6 +256,8 @@ casper.run(function() {
 	// this.echo(' - ' + links.join('\n - '));
 	
 	this.echo('Sitemap:');
+	this.echo(site.sitemap);
+	this.echo('Pages:');
 	for(i in site.webPages) {
 		this.echo(site.webPages[i].url +': ');
 		this.echo(site.webPages[i].links);
