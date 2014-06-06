@@ -132,6 +132,9 @@ else
 	<!--[if lt IE 9]>
 		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
+	<script type="text/css">
+		$j = $.noConflict();
+	</script>
 </head>
 
 <body class="site <?php echo $option

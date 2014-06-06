@@ -28,6 +28,7 @@
 var casper = require('casper').create({
 	clientScripts: ["jquery.min.js"]
 }), system = require('system');
+var utils = require('utils');
 // console.log(system.args); // 4 по умолчанию
 
 /*  ----  Additional Methods  ----  */
@@ -304,44 +305,46 @@ casper.then(function() {
 			site.sitemap = addLinksToSitemap(site.sitemap, site.webPages);
 		});
 	});
+	utils.dump(JSON.stringify(site));
 });
 
-casper.run(function() {
+casper.run(function() {	
 	// this.echo(links.length + ' links found:');
 	// this.echo(' - ' + links.join('\n - '));
 	
-	this.echo('Sitemap:');
-	this.echo(site.sitemap);
-	this.echo('Pages:');
-	for(i in site.webPages) {
-		this.echo(site.webPages[i].url +': ');
-		this.echo(site.webPages[i].links);
-		// this.echo(site.webPages[i].content);
-		if(site.webPages[i].content) {
-			this.echo('Content is loaded: '+ true);
-		} else {
-			this.echo('Content is loaded: '+ false);
-		}
-		this.echo('');
-	}
-	this.echo('Site top:');
-	this.echo(site.top.content);
-	this.echo('Site footer:');
-	this.echo(site.footer.content);
-	this.echo('');
-	this.echo('Menus:');
-	i = -1;
-	this.each(site.menus.items, function() {
-		i++;
-		this.echo('Menu '+ i +':');
-		j = -1;
-		this.each(site.menus.items[i], function() {
-			j++;
-			this.echo(site.menus.items[i][j].text +': '+ site.menus.items[i][j].url);
-		});
-	});
+	// this.echo('Sitemap:');
+	// this.echo(site.sitemap);
+	// this.echo('Pages:');
+	// for(i in site.webPages) {
+		// this.echo(site.webPages[i].url +': ');
+		// this.echo(site.webPages[i].links);
+		// if(site.webPages[i].content) {
+			// this.echo('Content is loaded: '+ true);
+		// } else {
+			// this.echo('Content is loaded: '+ false);
+		// }
+		// this.echo('');
+	// }
+	// this.echo('Site top:');
+	// this.echo(site.top.content);
+	// this.echo('Site footer:');
+	// this.echo(site.footer.content);
+	// this.echo('');
+	// this.echo('Menus:');
+	// i = -1;
+	// this.each(site.menus.items, function() {
+		// i++;
+		// this.echo('Menu '+ i +':');
+		// j = -1;
+		// this.each(site.menus.items[i], function() {
+			// j++;
+			// this.echo(site.menus.items[i][j].text +': '+ site.menus.items[i][j].url);
+		// });
+	// });
 	
-	this.echo('\n socBtns:');
-	this.echo(' - ' + site.socBtns.join('\n - '));
-	this.echo(' ').exit();
+	// this.echo('\n socBtns:');
+	// this.echo(' - ' + site.socBtns.join('\n - '));
+	
+	
+	this.exit();
 });

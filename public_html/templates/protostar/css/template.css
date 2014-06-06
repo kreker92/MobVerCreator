@@ -7525,8 +7525,9 @@ html[dir=rtl] .js-stools .chzn-container {
 .tools .btn-group { margin-top: 15px; }
 .item-page .btn-group.pull-right { margin-bottom: 20px; }
 #tryit { float: right; border: 1px solid #eee; padding: 30px 20px; border-radius: 20px; margin: 50px 0; }
-#iphone { float: right; width: 300px; margin-right: 25px;}
-#mainpageblock { margin: auto; width: 670px; }
+#iphone { float: left; }
+#iphone { width: 300px; }
+#mainpageblock { margin: auto; width: 72%; }
 .clr { clear: both; }
 #chronoform-mainPage { width: 300px; }
 #chronoform-mainPage #form-row-2 { float: left; margin-right: 10px !important; }

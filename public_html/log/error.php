@@ -5,3 +5,4 @@
 
 #Fields: datetime	priority	category	message
 2014-05-26T19:45:49+00:00	INFO	joomlafailure	Имя пользователя и пароль не совпадают или у вас еще нет учетной записи на сайте
+2014-06-06T12:19:52+00:00	INFO	cookiefailure	Пустой пароль не допускается
