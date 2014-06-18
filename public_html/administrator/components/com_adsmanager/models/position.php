@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -22,6 +22,11 @@ class AdsmanagerModelPosition extends TModel
 
 		$positions = $this->_db->loadObjectList();
 		return $positions;
+    }
+    
+    function cleanFieldsByPosition() {
+    	$this->_db->setQuery('UPDATE #__adsmanager_fields SET pos = -1');
+    	$this->_db->query();
     }
     
     function setPosition($id,$title,$listfields) {

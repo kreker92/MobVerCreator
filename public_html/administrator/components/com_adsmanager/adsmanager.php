@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -62,5 +62,5 @@ $config = $db->loadObject();
 $controller->execute(JRequest::getCmd('task', null));
 $controller->redirect();
 
-echo "<br/><div align='center'><i>Adsmanager 2.9.11</i></div>";
+echo "<br/><div align='center'><i>Adsmanager 2.9.12</i></div>";
 echo '<div class="alert">Upgrade to a PRO version, to get full features and support : <a href="http://joomprod.com/compare.html">joomprod.com</a></div>';

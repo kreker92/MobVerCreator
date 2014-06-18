@@ -192,10 +192,10 @@ else
 						}
 					}
 					
-					if (isset($this->topoption)) {
+					/*if (isset($this->topoption)) {
 						$target = TRoute::_('index.php?option=com_paidsystem&task=bringtotop&id='.$content->id);
 						echo "<br/><a href='".$target."'>".JText::_('PAIDSYSTEM_TOP_ONE_SHOT')."</a>";
-					}	
+					}*/	
 					?>
 				</td>
 			</tr>

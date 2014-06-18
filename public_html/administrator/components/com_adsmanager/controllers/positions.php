@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -47,6 +47,7 @@ class AdsmanagerControllerPositions extends TController
 		$app = JFactory::getApplication();
 		
 		$model = $this->getModel("position");
+		$model->cleanFieldsByPosition();
 		
 		$positions = $model->getPositions();
 		foreach($positions as $key => $position) {

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -78,6 +78,8 @@ class AdsmanagerControllerColumns extends TController
 		$app = JFactory::getApplication();
 	
 		$model = $this->getModel("Column");
+		
+		$model->cleanFieldsByColumn();
 	
 		$columns = $model->getColumns(null,true);
 		foreach($columns as $key => $col) {

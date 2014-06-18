@@ -2842,7 +2842,7 @@ input[type="submit"].btn.btn-mini {
 	display: block;
 }
 .nav > li > a:hover,
-.nav > li > a:focus, #sitelist a.grey:hover {
+.nav > li > a:focus, #site-list a.grey:hover {
 	text-decoration: none;
 	background-color: #eee;
 }
@@ -6975,9 +6975,13 @@ body.site.fluid {
 	background: #fff;
 }
 .site-title {
-	font-size: 40px;
-	line-height: 48px;
+	font-size: 75px;
+	line-height: 40px;
 	font-weight: bold;
+}
+.site-description {
+	font-size: 12px;
+	text-align: center;
 }
 .brand {
 	color: #004466;
@@ -7259,6 +7263,7 @@ figcaption {
 	}
 	.header {
 		background: transparent;
+		position: relative;
 	}
 	.header .brand {
 		float: none;
@@ -7525,8 +7530,7 @@ html[dir=rtl] .js-stools .chzn-container {
 .tools .btn-group { margin-top: 15px; }
 .item-page .btn-group.pull-right { margin-bottom: 20px; }
 #tryit { float: right; border: 1px solid #eee; padding: 30px 20px; border-radius: 20px; margin: 50px 0; }
-#iphone { float: left; }
-#iphone { width: 300px; }
+#site_example { float: left; width: 300px; }
 #mainpageblock { margin: auto; width: 72%; }
 .clr { clear: both; }
 #chronoform-mainPage { width: 300px; }
@@ -7538,7 +7542,7 @@ html[dir=rtl] .js-stools .chzn-container {
 .navigation .menu li a, .footer .menu li a { padding: 5px 20px; }
 .navigation { height: 18px; }
 .brand.pull-left { padding: 20px; }
-#login-form .unstyled { display: none; }
+/* #login-form .unstyled { display: none; } */
 
 #leftCol { float: left; width: 60%; }
 #rightCol { float: left; width: 330px; }
@@ -7546,3 +7550,130 @@ html[dir=rtl] .js-stools .chzn-container {
 textarea.mce_editable { width: 316px !important; }
 #leftCol #tryit { float: none; width: 90%; }
 #leftCol .table.table-striped.table-hover { width: 97%; }
+#appsloading {
+	position: fixed;
+	z-index: 1000;
+	/* opacity: 0.8; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(http://diplom.kreker92.tmweb.ru/media/jui/img/ajax-loader.gif) 50% 25% no-repeat rgba(255, 255, 255, 0.8);
+	display: block;
+}
+#appsloading p {
+	position: fixed;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	font: 30px/35px'Open Sans', sans-serif;
+	text-shadow: 8px 8px 3px #AAA;
+}
+.gbs3 input.form-control.invalid {
+	border: 1px solid #9d261d;
+	font-weight: normal;
+}
+button[type="button"]:focus, input[type="submit"]:focus { outline: none !important; }
+header.header {
+	position: relative;
+}
+div.header-search.pull-right {
+		position: absolute !important;
+		bottom: 0;
+		right: 0;
+	}
+#login-formhidden .unstyled {
+	display: none;
+}
+#site_view {
+	margin: auto;
+	padding: 140px 50px;
+}
+#site_view > div {
+	margin: auto;
+}
+#iphone {/* 280 492 */
+	width: 274px;
+	height: 486px;
+}
+#android {/* 291 485 */
+	width: 343px;
+	height: 575px;
+}
+#windows-phone {/* 279 462 */
+	width: 329px;
+	height: 550px;
+}
+#blackberry {/* 278 463 */
+	width: 331px;
+	height: 550px;
+}
+
+.iphone {
+	width: 347px;
+	height: 699px;
+	background: url('/images/devices.png') 14px -2063px no-repeat;
+}
+.android {
+	width: 312px;
+	height: 666px;
+	background: url('/images/devices.png') -5px -1393px no-repeat;
+}
+.windows-phone {
+	width: 375px;
+	height: 651px;
+	background: url('/images/devices.png') -666px -732px no-repeat;
+}
+.blackberry {
+	width: 353px;
+	height: 660px;
+	background: url('/images/devices.png') -327px -1393px no-repeat;
+}
+#settings_panel a {
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	text-indent: -9999px;
+	background: url('/images/preview-icons.png') no-repeat;
+}
+#model a:first-child {
+	background-position: 47px -83px;
+}
+#model a:first-child + a {
+	background-position: 47px 44px;
+}
+#model a:first-child + a + a {
+	background-position: 47px -197px;
+}
+#model a:first-child + a + a + a {
+	background-position: 47px -330px;
+}
+#model a:first-child:hover, #model a:first-child.active  {
+	background-position: -95px -83px;
+}
+#model a:first-child + a.active, #model a:first-child + a:hover {
+	background-position: -95px 44px;
+}
+#model a:first-child + a + a.active, #model a:first-child + a + a:hover {
+	background-position: -95px -197px;
+}
+#model a:first-child + a + a + a.active, #model a:first-child + a + a + a:hover {
+	background-position: -95px -330px;
+}
+#rotate a {
+	background-position: -269px -195px;
+}
+#rotate a:hover {
+	background-position: -436px -195px;
+}
+#rotate a.active {
+	background-position: -269px 42px;
+}
+#rotate a.active {
+	background-position: -436px 42px;
+}
+
+#settings_panel a:hover, #settings_panel a.active {
+	background-color: #eee;
+	text-decoration: none;
+}

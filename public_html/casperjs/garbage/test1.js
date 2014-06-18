@@ -26,7 +26,7 @@
 */
 
 var casper = require('casper').create({
-	clientScripts: ["jquery.min.js"]
+	clientScripts: ["../jquery.min.js"]
 }), system = require('system');
 // console.log(system.args); // 4 по умолчанию
 

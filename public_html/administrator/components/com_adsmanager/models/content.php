@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -621,6 +621,19 @@ class AdsmanagerModelContent extends TModel
 	
 	function manage_expiration($plugins,$conf)
 	{
+		$last_cron_date = date("Ymd");
+		$Fnm = JPATH_BASE .'/components/com_adsmanager/cron.php';
+		jimport( 'joomla.filesystem.file' );
+		$content = '
+	    <?php defined(\'_JEXEC\') or die( \'Restricted access\' );
+	    		/**
+				 * @package		AdsManager
+				 * @copyright	Copyright (C) 2010-2013 JoomPROD.com. All rights reserved.
+				 * @license		GNU/GPL
+				 */
+	    		$last_cron_date='.$last_cron_date.';?>';
+		JFile::write( $Fnm, $content );
+		
 		if ($conf->expiration == 1)
 		{
 			if ($conf->recall == 1)
@@ -628,7 +641,8 @@ class AdsmanagerModelContent extends TModel
 				$this->_db->setQuery( "SELECT * FROM #__adsmanager_ads WHERE expiration_date IS NOT NULL AND DATE_SUB(expiration_date, INTERVAL ".$conf->recall_time." DAY) <= CURDATE() AND recall_mail_sent = 0 AND published = 1");
 				$contents = $this->_db->loadObjectList();
 				
-				
+				$this->_db->setQuery( "UPDATE #__adsmanager_ads SET recall_mail_sent = 1 WHERE expiration_date IS NOT NULL AND DATE_SUB(expiration_date, INTERVAL ".$conf->recall_time." DAY) <= CURDATE() AND recall_mail_sent = 0 AND published = 1");
+				$this->_db->query();
 				
 				if (isset($contents))
 				{
@@ -637,8 +651,7 @@ class AdsmanagerModelContent extends TModel
 						$this->sendExpirationEmail($content,$conf);
 					}
 				}
-				$this->_db->setQuery( "UPDATE #__adsmanager_ads SET recall_mail_sent = 1 WHERE expiration_date IS NOT NULL AND DATE_SUB(expiration_date, INTERVAL ".$conf->recall_time." DAY) <= CURDATE() AND recall_mail_sent = 0 AND published = 1");
-				$this->_db->query();
+				
 
 				$this->_db->setQuery( " SELECT a.*,c.name as cat, c.id as catid FROM #__adsmanager_ads as a".
 						      " INNER JOIN #__adsmanager_adcat as adcat ON adcat.adid = a.id ".
@@ -700,18 +713,6 @@ class AdsmanagerModelContent extends TModel
 				}
 			}
 		}
-		$last_cron_date = date("Ymd");
-		$Fnm = JPATH_BASE .'/components/com_adsmanager/cron.php';
-	    jimport( 'joomla.filesystem.file' );
-	    $content = '
-	    <?php defined(\'_JEXEC\') or die( \'Restricted access\' );
-	    		/**
-				 * @package		AdsManager
-				 * @copyright	Copyright (C) 2010-2013 JoomPROD.com. All rights reserved.
-				 * @license		GNU/GPL
-				 */
-	    		$last_cron_date='.$last_cron_date.';?>';
-		JFile::write( $Fnm, $content );
 	}
 	
 	function getFilterOrder($order,$orderdir = 'DESC')

@@ -221,7 +221,10 @@ else
 				   echo JText::_('ADSMANAGER_FROM')." "; 
 				   $target = TLink::getUserAdsLink($content->userid);
 				   
-				   echo "<a href='".$target."'>".$content->user."</a><br/>";
+				    if ($this->conf->display_fullname == 1)
+				   		echo "<a href='".$target."'>".$content->fullname."</a><br/>";
+				   else
+				   		echo "<a href='".$target."'>".$content->user."</a><br/>";
 				}
 				?>
 				<?php echo sprintf(JText::_('ADSMANAGER_VIEWS'),$content->views); ?>

@@ -57,7 +57,7 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="@toggler_default_php_a" type="nn_toggler" param="enable_php" value="1" />
-				<field name="forbidden_php" type="textarea" rows="3" cols="40" default="dl, escapeshellarg, escapeshellcmd, exec, passthru, popen, proc_close, proc_open, shell_exec, symlink, system" label="SRC_FORBIDDEN_PHP_FUNCTIONS" description="SRC_FORBIDDEN_PHP_FUNCTIONS_DESC" />
+				<field name="forbidden_php" type="textarea" rows="3" cols="40" default="" label="SRC_FORBIDDEN_PHP_FUNCTIONS" description="SRC_FORBIDDEN_PHP_FUNCTIONS_DESC" />
 				<field name="forbidden_tags" type="nn_textareaplus" width="400" height="80" default="" label="SRC_FORBIDDEN_HTML_TAGS" description="SRC_FORBIDDEN_HTML_TAGS_DESC" />
 				<field name="@toggler_default_php_b" type="nn_toggler" />
 				<field name="@block_default_php_b" type="nn_block" end="1" />

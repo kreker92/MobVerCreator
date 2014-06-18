@@ -11,7 +11,7 @@ if (isset($this->warning_text))
 	echo $this->warning_text;
 
 if (isset($this->error_text))
-	$this->error_text;
+	echo $this->error_text;
 echo JText::_('ADSMANAGER_RULESREAD');
 
 $app = JFactory::getApplication();

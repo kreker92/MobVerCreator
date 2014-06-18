@@ -6,7 +6,7 @@
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>support@juloa.com</authorEmail>
 	<authorUrl>www.joomprod.com</authorUrl>
-	<version>2.9.11</version>
+	<version>2.9.12</version>
 	<description>Displays the AdsManager Menu</description>
 	<files>
 		<filename module="mod_adsmanager_menu">mod_adsmanager_menu.php</filename>

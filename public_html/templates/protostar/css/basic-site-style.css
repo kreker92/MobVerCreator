@@ -1,0 +1,4 @@
+﻿#logo { text-align: center; }
+#mainMenu ul li[data-role="list-divider"] { margin-top: 1em; }
+#callbackForm ul { margin-bottom: 1em; }
+#callbackForm a { margin-bottom: 1em; }

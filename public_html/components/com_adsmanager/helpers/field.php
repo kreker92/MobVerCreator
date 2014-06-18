@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -511,7 +511,7 @@ class JHTMLAdsmanagerField
 				if($options == null)
                     $priceFormat = '';
                 else
-                    $priceFormat = $this->formatPrice(0, $options);
+                    $priceFormat = $this->formatPrice(false, $options);
                 
 				if ($field->required == 1)
 					$return .= "<input class='adsmanager_required' mosReq='1' id='$name' type='text' test='number' mosLabel=\"$strtitle\" name='$name' size='$field->size' maxlength='$field->maxlength' $read_only value='$value' /> ".$priceFormat."\n"; 

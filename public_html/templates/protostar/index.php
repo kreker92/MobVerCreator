@@ -37,10 +37,12 @@ else
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' .$this->template. '/js/template.js');
+$doc->addScript('templates/' .$this->template. '/js/jquery.fancybox.pack.js');
 $doc->addScript('templates/' .$this->template. '/js/js.js');
 
 // Add Stylesheets
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+$doc->addStyleSheet('templates/'.$this->template.'/css/jquery.fancybox.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -203,6 +205,9 @@ else
 			</p>
 		</div>
 	</footer>
+	<div style="display: none;">
+		<jdoc:include type="modules" name="hidden" style="none" />
+	</div>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>

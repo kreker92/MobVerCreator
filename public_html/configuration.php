@@ -16,11 +16,11 @@ class JConfig {
 	public $db = 'kreker92_diplom';
 	public $dbprefix = 'diplom_';
 	public $dbtype = 'mysql';
-	public $debug = '0';
+	public $debug = '1';
 	public $debug_lang = '0';
 	public $display_offline_message = '1';
 	public $editor = 'none';
-	public $error_reporting = 'default';
+	public $error_reporting = 'none';
 	public $feed_email = 'author';
 	public $feed_limit = '10';
 	public $force_ssl = '0';

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package		AdsManager
- * @copyright	Copyright (C) 2010-2012 JoomPROD.com. All rights reserved.
+ * @copyright	Copyright (C) 2010-2012 Juloa.com. All rights reserved.
  * @license		GNU/GPL
  */
 
@@ -57,6 +57,11 @@ class AdsmanagerModelColumn extends TModel
 		}		
 		$columns = $col;
 		return $columns;
+    }
+    
+    function cleanFieldsByColumn() {
+    	$this->_db->setQuery('UPDATE #__adsmanager_fields SET columnid = -1');
+    	$this->_db->query();
     }
     
     function setColumn($id,$title,$listfields) {
